@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="cordova.js"></script>
+</head>
+<body>
+
+<!--home page-->
+<div data-role="page" id="home" data-theme="a">
+
+  <div data-role="header">
+
+    <h1>Simple Calculator</h1>
+	
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#home" data-icon="home">Home</a></li>
+       <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+       <li><a href="#pagethree" data-icon="info">Help</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+  	<p> This is a jQuery mobile exercise which provides the user with a calculator 		for basic mathematical operations</p>
+  </div>
+
+  <div data-role="footer">
+    <h3>Homework - Geerish Suddul</h3>
+  </div> 
+</div> 
+<!--End home page-->
+
+<div data-role="page" id="pageone" data-theme="a">
+
+  <div data-role="header">
+
+    <h1>Simple Calculator</h1>
+	
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#home" data-icon="home">Home</a></li>
+       <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+       <li><a href="#pagethree" data-icon="info">Help</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+  	<input type="text" id="opLeft">
+	<select name="op" id="op">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type="text" id="opRight">
+	<a id="btnCalc" href="#pagetwo" data-role="button">Calculate</a>
+
+  </div>
+
+  <div data-role="footer">
+    <h3>Homework</h3>
+  </div> 
+</div> 
+
+<!--PAGE 2-->
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+  	<h1>RESULTS</h1>
+
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" data-icon="home">Home</a></li>
+       <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+       <li><a href="#pagethree" data-icon="info">Help</a></li>
+      </ul>
+    </div>
+  </div>
+
+ <div data-role="main" class="ui-content" id="popupResult">
+		<div class="ui-content">
+			<p>Operation:
+			<h4 id="popup-op"> </h4>
+			</p>
+			<!--<h4>=</h4>-->
+			<p>Results 
+			<h4 id="popup-result"> </h4> </p>
+			<a data-role="button" data-rel="back" data-icon="back">Back</a>
+		</div>
+	</div>
+
+  <div data-role="footer">
+    <h3>Homework</h3>
+  </div> 
+</div> 
+
+
+<!--page three-->
+<div data-role="page" id="pagethree" data-theme="a">
+
+  <div data-role="header">
+
+    <h1>Simple Calculator</h1>
+	
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#home" data-icon="home">Home</a></li>
+       <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+       <li><a href="#pagethree" data-icon="info">Help</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+  	<p> This is the help section and provides basic information about how to use 		the calculator</p>
+	<a href="#pagefour" data-icon="info" data-role="button">More Info</a>
+  </div>
+
+  <div data-role="footer">
+    <h3>Homework</h3>
+  </div> 
+</div> 
+<!--End pagethree-->
+
+<!--pagefour-->
+<div data-role="page" id="pagefour" data-dialog="true" data-theme="a">
+
+  <div data-role="header">
+    <h1>More Info</h1>
+  </div>
+	
+
+  <div data-role="main" class="ui-content">
+  	<p> You have requested more information about the App!</p>
+	<a data-role="button" data-rel="back" data-icon="back">Dismiss</a>
+  </div>
+
+
+</div> 
+<!--End pagefour-->
+
+    <script >
+      console.clear();
+
+$(document).ready(function() {
+	console.log("doc ready");
+	
+	$("#btnCalc").on("click", function() {
+		var left = parseFloat($("#opLeft").val());
+		var right = parseFloat($("#opRight").val());
+		var op = $("#op").val();
+		var result;
+		
+		switch(op) {
+			case "+": result = left + right; break;
+			case "-": result = left - right; break;
+			case "*": result = left * right; break;
+			case "/": result = left / right; break;
+		}
+		console.log(left + " " + op + " " + right + " = " + result);
+		
+		// update results page
+		$("#popup-op").html(left + " " + op + " " + right);
+		$("#popup-result").html(result);
+	});
+});
+    </script>
+
+
+</body>
+</html>

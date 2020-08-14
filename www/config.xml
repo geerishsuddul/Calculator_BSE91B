@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.gs.calc"
+    versionCode = "1"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>My New Calculator</name>
+
+  <description>
+      A very simple calculator, which serves as an example for hybrid app.
+  </description>
+
+  <author href="https://build.phonegap.com" email="geerish.suddul@gmail.com">
+      Geerish Suddul
+  </author>
+
+
+<!-- Core plugins -->
+    <plugin name="cordova-plugin-battery-status"      source="npm" spec="~1.2.4" />
+    <plugin name="cordova-plugin-camera"              source="npm" spec="~2.4.1" />
+    <plugin name="cordova-plugin-media-capture"       source="npm" spec="~1.4.3" />
+    <plugin name="cordova-plugin-device"              source="npm" spec="~1.1.6" />
+    <plugin name="cordova-plugin-dialogs"             source="npm" spec="~1.3.3" />
+    <plugin name="cordova-plugin-file"                source="npm" spec="~4.3.3" />
+    <plugin name="cordova-plugin-geolocation"         source="npm" spec="~2.4.3" />
+    <plugin name="cordova-plugin-globalization"       source="npm" spec="~1.0.7" />
+    <plugin name="cordova-plugin-inappbrowser"        source="npm" spec="~1.7.1" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.3.3" />
+    <plugin name="cordova-plugin-vibration"           source="npm" spec="~2.1.5" />
+
+   <platform name="android">
+        <icon   src="img/calc_ico.png"               density="ldpi" />
+        <icon   src="img/calc_ico.png"               density="mdpi" />
+        <icon   src="img/calc_ico.png"               density="hdpi" />
+        <icon   src="img/calc_ico.png"               density="xhdpi" />
+        <icon   src="img/calc_ico.png"               density="xxhdpi" />
+        <icon   src="img/calc_ico.png"               density="xxxhdpi" />
+   </platform>
+
+
+</widget>
